@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ms Lê Hằng English - Bài Kiểm Tra Phát Âm & Trọng Âm (40 Câu)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Nunito', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background: linear-gradient(135deg, #00B4A2 0%, #00A699 50%, #00897B 100%);
+            min-height: 100vh;
+            padding: 20px 12px 100px 12px;
+            position: relative;
+            overflow-x: hidden;
+            color: #1E293B;
+        }
+
+        /* SVG Gamification Floating Background Patterns */
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .floating-icon {
+            position: absolute;
+            opacity: 0.18;
+            animation: floatSlow 12s infinite ease-in-out;
+        }
+
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-25px) rotate(15deg); }
+        }
+
+        .icon-1 { top: 5%; left: 5%; width: 70px; animation-delay: 0s; }
+        .icon-2 { top: 18%; right: 6%; width: 85px; animation-delay: 2s; }
+        .icon-3 { top: 45%; left: 3%; width: 65px; animation-delay: 4s; }
+        .icon-4 { top: 68%; right: 5%; width: 80px; animation-delay: 1s; }
+        .icon-5 { top: 88%; left: 8%; width: 75px; animation-delay: 3s; }
+
+        /* Main Container Card */
+        .main-container {
+            max-width: 820px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Header Branding */
+        .author-header {
+            text-align: center;
+            color: #FFFFFF;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            background: rgba(0, 77, 64, 0.4);
+            display: inline-block;
+            padding: 4px 16px;
+            border-radius: 20px;
+            margin: 0 auto 8px auto;
+            backdrop-filter: blur(4px);
+        }
+
+        .header-wrapper {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .main-title {
+            color: #FFFFFF;
+            font-size: 24px;
+            font-weight: 900;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .section-title-banner {
+            background: rgba(255, 255, 255, 0.25);
+            color: #FFFFFF;
+            padding: 12px 20px;
+            border-radius: 16px;
+            font-size: 17px;
+            font-weight: 900;
+            margin: 30px 0 18px 0;
+            text-align: center;
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Notice / Warning Box */
+        .warning-card {
+            background: #FFFBEB;
+            border: 2px solid #F59E0B;
+            border-radius: 18px;
+            padding: 16px 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            position: relative;
+        }
+
+        .warning-title {
+            color: #D97706;
+            font-size: 16px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .warning-text {
+            color: #78350F;
+            font-size: 14.5px;
+            line-height: 1.5;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 6px;
+        }
+
+        .warning-text-secondary {
+            color: #B45309;
+            font-size: 14px;
+            line-height: 1.5;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .warning-highlight {
+            color: #DC2626;
+            font-size: 15px;
+            font-weight: 900;
+            text-align: center;
+            font-style: italic;
+        }
+
+        /* Question Cards (Glassmorphism) */
+        .question-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            border-radius: 24px;
+            padding: 22px;
+            margin-bottom: 28px;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+            transition: transform 0.2s ease;
+        }
+
+        /* Question Header Inside Card */
+        .question-header {
+            background: #004D40;
+            color: #FFFFFF;
+            border-radius: 16px;
+            padding: 14px 18px;
+            margin-bottom: 18px;
+            box-shadow: 0 4px 12px rgba(0, 77, 64, 0.25);
+        }
+
+        .question-number {
+            font-size: 18px;
+            font-weight: 900;
+            color: #FFD700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .question-words-line {
+            font-size: 17px;
+            font-weight: 700;
+            color: #FFFFFF;
+            text-align: center;
+            word-spacing: 2px;
+            line-height: 1.6;
+        }
+
+        .question-words-line u {
+            text-decoration: underline;
+            text-decoration-color: #FFD700;
+            text-decoration-thickness: 3px;
+            font-weight: 900;
+            color: #FFFDDF;
+        }
+
+        /* 2x2 Answer Grid */
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        @media (max-width: 520px) {
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .opt-btn {
+            background: #F0FDF4;
+            color: #0F172A;
+            border: 2px solid #CBD5E1;
+            border-radius: 16px;
+            padding: 14px 16px;
+            font-size: 16px;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 5px 0 #CBD5E1;
+            transition: all 0.12s ease;
+            text-align: center;
+            outline: none;
+            position: relative;
+            user-select: none;
+        }
+
+        .opt-btn u {
+            text-decoration: underline;
+            text-decoration-color: #EF4444;
+            text-decoration-thickness: 2px;
+            color: #DC2626;
+            font-weight: 900;
+        }
+
+        .opt-btn:hover:not(:disabled) {
+            background: #E2E8F0;
+            transform: translateY(-2px);
+            box-shadow: 0 7px 0 #CBD5E1;
+        }
+
+        .opt-btn:active:not(:disabled) {
+            transform: translateY(3px);
+            box-shadow: 0 2px 0 #CBD5E1;
+        }
+
+        /* Correct State */
+        .opt-btn.correct {
+            background: #00D26A !important;
+            color: #FFFFFF !important;
+            border-color: #00B359 !important;
+            box-shadow: 0 5px 0 #008040 !important;
+        }
+
+        .opt-btn.correct u {
+            color: #FFFFFF !important;
+            text-decoration-color: #FFFFFF !important;
+        }
+
+        /* Incorrect State */
+        .opt-btn.incorrect {
+            background: #FF4757 !important;
+            color: #FFFFFF !important;
+            border-color: #E03242 !important;
+            box-shadow: 0 5px 0 #B3202E !important;
+        }
+
+        .opt-btn.incorrect u {
+            color: #FFFFFF !important;
+            text-decoration-color: #FFFFFF !important;
+        }
+
+        .opt-btn:disabled {
+            cursor: default;
+        }
+
+        /* Explanation Box */
+        .explanation-box {
+            display: none;
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            border-left: 6px solid #F59E0B;
+            border-radius: 16px;
+            padding: 18px;
+            margin-top: 18px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+            animation: slideDown 0.3s ease-out forwards;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Top Yellow Banner inside Explanation */
+        .exp-banner {
+            background: #FEF3C7;
+            border: 1.5px dashed #F59E0B;
+            border-radius: 10px;
+            padding: 9px 14px;
+            font-size: 14px;
+            font-weight: 800;
+            color: #92400E;
+            margin-bottom: 14px;
+            text-align: center;
+        }
+
+        .exp-content {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #334155;
+        }
+
+        .exp-section-title {
+            font-weight: 800;
+            color: #1E293B;
+            margin-bottom: 6px;
+            font-size: 15px;
+        }
+
+        .exp-list {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 12px;
+        }
+
+        .exp-list li {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .exp-list li::before {
+            content: "•";
+            position: absolute;
+            left: 4px;
+            color: #00A699;
+            font-size: 18px;
+            line-height: 1;
+        }
+
+        /* Highlighting Colors inside Explanation */
+        .en-word {
+            color: #2563EB;
+            font-weight: 800;
+        }
+
+        .ipa-badge {
+            background: #EDE9FE;
+            color: #6D28D9;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-weight: 800;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14.5px;
+            display: inline-block;
+            margin: 0 3px;
+        }
+
+        .vn-meaning {
+            color: #D97706;
+            font-weight: 700;
+        }
+
+        .exp-why-box {
+            background: #F8FAFC;
+            border-radius: 10px;
+            padding: 10px 14px;
+            border: 1px solid #E2E8F0;
+        }
+
+        .exp-why-title {
+            font-weight: 800;
+            color: #0F172A;
+            margin-bottom: 4px;
+        }
+
+        .exp-why-desc {
+            color: #475569;
+            font-weight: 600;
+        }
+
+        /* Floating Summary Button */
+        .floating-summary-container {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .summary-trigger-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #FF9F43 0%, #FF6200 100%);
+            color: #FFFFFF;
+            border: none;
+            border-radius: 50px;
+            padding: 14px 24px;
+            font-size: 17px;
+            font-weight: 900;
+            cursor: pointer;
+            box-shadow: 0 8px 24px rgba(255, 98, 0, 0.4);
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .summary-trigger-btn:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 28px rgba(255, 98, 0, 0.5);
+        }
+
+        /* Modal Summary */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(6px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-card {
+            background: #FFFFFF;
+            border-radius: 28px;
+            max-width: 480px;
+            width: 100%;
+            padding: 28px 24px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+            animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            position: relative;
+        }
+
+        @keyframes popIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .modal-icon {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .modal-title {
+            font-size: 22px;
+            font-weight: 900;
+            color: #0F172A;
+            margin-bottom: 6px;
+        }
+
+        .modal-score-badge {
+            display: inline-block;
+            background: #E0F2FE;
+            color: #0284C7;
+            font-size: 32px;
+            font-weight: 900;
+            padding: 8px 24px;
+            border-radius: 20px;
+            margin: 12px 0 18px 0;
+            border: 2px dashed #0284C7;
+        }
+
+        .modal-message {
+            font-size: 15px;
+            font-weight: 700;
+            color: #475569;
+            line-height: 1.5;
+            margin-bottom: 22px;
+            background: #F8FAFC;
+            padding: 12px 16px;
+            border-radius: 12px;
+        }
+
+        .modal-close-btn {
+            background: #00A699;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 14px;
+            padding: 12px 28px;
+            font-size: 16px;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 166, 153, 0.3);
+            transition: all 0.15s ease;
+        }
+
+        .modal-close-btn:hover {
+            background: #00897B;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SVG Environmental Gamification Background Patterns -->
+    <div class="bg-pattern">
+        <!-- Globe -->
+        <svg class="floating-icon icon-1" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.5">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+        <!-- Leaf -->
+        <svg class="floating-icon icon-2" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.5">
+            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.4 19 2c1 2 2 4.1 2 9 0 5-4 9-10 9z"/>
+            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+        </svg>
+        <!-- Recycle -->
+        <svg class="floating-icon icon-3" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.5">
+            <path d="M7 19l-4-7 4-7h10l4 7-4 7H7z"/>
+            <path d="M12 8v8M8 12h8"/>
+        </svg>
+        <!-- Sprout -->
+        <svg class="floating-icon icon-4" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.5">
+            <path d="M7 20h10M12 20v-8M12 12a5 5 0 0 1 5-5h3v1a5 5 0 0 1-5 5h-3zM12 12a5 5 0 0 0-5-5H4v1a5 5 0 0 0 5 5h3z"/>
+        </svg>
+        <!-- Globe 2 -->
+        <svg class="floating-icon icon-5" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.5">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        
+        <div class="header-wrapper">
+            <div class="author-header">Giáo viên tạo: Ms Lê Hằng English</div>
+            <h1 class="main-title">BÀI KIỂM TRA PHÁT ÂM & TRỌNG ÂM</h1>
+        </div>
+
+        <!-- Warning / Reminder Box -->
+        <div class="warning-card">
+            <div class="warning-title">
+                <span>⚠️</span> LỜI NHẮC CỰC KỲ QUAN TRỌNG <span>⚠️</span>
+            </div>
+            <p class="warning-text">
+                Chỉ có đọc kỹ giải thích ngay sau mỗi câu, sau đó ghi lại từ vựng/cấu trúc mới vào vở để học thì mới thực sự giỏi lên.
+            </p>
+            <p class="warning-text-secondary">
+                Làm cho xong mà không đọc giải thích hay đọc qua loa không ghi chép thì chỉ tốn thời gian vô ích!
+            </p>
+            <p class="warning-highlight">* Kéo tới đâu, làm tới đó! *</p>
+        </div>
+
+        <!-- Questions Container dynamically populated by JS -->
+        <div id="questions-container"></div>
+
+    </div>
+
+    <!-- Floating Summary Button -->
+    <div class="floating-summary-container">
+        <button class="summary-trigger-btn" onclick="showSummaryModal()">
+            <span>📊</span> TỔNG KẾT KẾT QUẢ
+        </button>
+    </div>
+
+    <!-- Summary Modal -->
+    <div class="modal-overlay" id="summary-modal">
+        <div class="modal-card">
+            <div class="modal-icon" id="modal-emoji">🌟</div>
+            <h2 class="modal-title">KẾT QUẢ BÀI LÀM</h2>
+            <div class="modal-score-badge" id="modal-score">0 / 40</div>
+            <div class="modal-message" id="modal-message">
+                Hãy hoàn thành các câu hỏi để xem tổng kết nhé!
+            </div>
+            <button class="modal-close-btn" onclick="closeSummaryModal()">Đóng / Xem lại bài</button>
+        </div>
+    </div>
+
+    <script>
+        // Web Audio API Synthesizer for zero external dependency audio
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+        function playCorrectSound() {
+            try {
+                if (audioCtx.state === 'suspended') {
+                    audioCtx.resume();
+                }
+                const now = audioCtx.currentTime;
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(523.25, now); // C5
+                osc.frequency.setValueAtTime(659.25, now + 0.12); // E5
+                osc.frequency.setValueAtTime(783.99, now + 0.24); // G5
+
+                gain.gain.setValueAtTime(0.25, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.45);
+
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+
+                osc.start(now);
+                osc.stop(now + 0.45);
+            } catch (e) {
+                console.log("Audio play error:", e);
+            }
+        }
+
+        function playWrongSound() {
+            try {
+                if (audioCtx.state === 'suspended') {
+                    audioCtx.resume();
+                }
+                const now = audioCtx.currentTime;
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(200, now);
+                osc.frequency.linearRampToValueAtTime(120, now + 0.25);
+
+                gain.gain.setValueAtTime(0.2, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
+
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+
+                osc.start(now);
+                osc.stop(now + 0.3);
+            } catch (e) {
+                console.log("Audio play error:", e);
+            }
+        }
+
+        // Fisher-Yates Shuffle Algorithm
+        function shuffleArray(array) {
+            const arr = [...array];
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+
+        // Master Questions Database (All 40 Questions)
+        const questionsData = [
+            // PART I: PRONUNCIATION (1-25)
+            {
+                "id": 1,
+                "sectionTitle": "I. Choose the letter A, B, C or D to indicate the word whose underlined part differs from the other three in pronunciation",
+                "wordsHeaderHtml": "p<u>o</u>ttery &nbsp;|&nbsp; fl<u>o</u>wer &nbsp;|&nbsp; sil<u>e</u>nt &nbsp;|&nbsp; s<u>e</u>rvice",
+                "requirement": "Chọn từ có phần gạch chân phát âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "pottery", "underlinedHtml": "p<u>o</u>ttery", "isCorrect": false},
+                    {"word": "flower", "underlinedHtml": "fl<u>o</u>wer", "isCorrect": false},
+                    {"word": "silent", "underlinedHtml": "sil<u>e</u>nt", "isCorrect": false},
+                    {"word": "service", "underlinedHtml": "s<u>e</u>rvice", "isCorrect": true}
+                ],
+                "analysis": [
+                    {"word": "pottery", "type": "n", "ipa": "/ə/", "meaning": "đồ gốm"},
+                    {"word": "flower", "type": "n", "ipa": "/ə/", "meaning": "bông hoa"},
+                    {"word": "silent", "type": "adj", "ipa": "/ə/", "meaning": "im lặng"},
+                    {"word": "service", "type": "n", "ipa": "/ɜː/", "meaning": "dịch vụ"}
+                ],
+                "whyWord": "service",
+                "whyText": "Phần gạch chân ở service phát âm là /ɜː/, trong khi các từ còn lại phát âm là /ə/."
+            },
+            {
+                "id": 2,
+                "sectionTitle": null,
+                "wordsHeaderHtml": "g<u>ir</u>l &nbsp;|&nbsp; exp<u>er</u>t &nbsp;|&nbsp; <u>o</u>pen &nbsp;|&nbsp; b<u>ur</u>n",
+                "requirement": "Chọn từ có phần gạch chân phát âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "girl", "underlinedHtml": "g<u>ir</u>l", "isCorrect": false},
+                    {"word": "expert", "underlinedHtml": "exp<u>er</u>t", "isCorrect": false},
+                    {"word": "open", "underlinedHtml": "<u>o</u>pen", "isCorrect": true},
+                    {"word": "burn", "underlinedHtml": "b<u>ur</u>n", "isCorrect": false}
+                ],
+                "analysis": [
+                    {"word": "girl", "type": "n", "ipa": "/ɜː/", "meaning": "cô gái"},
+                    {"word": "expert", "type": "n", "ipa": "/ɜː/", "meaning": "chuyên gia"},
+                    {"word": "open", "type": "v/adj", "ipa": "/ə/", "meaning": "mở"},
+                    {"word": "burn", "type": "v", "ipa": "/ɜː/", "meaning": "đốt cháy"}
+                ],
+                "whyWord": "open",
+                "whyText": "Phần gạch chân ở open phát âm là /ə/, trong khi các từ còn lại phát âm là /ɜː/."
+            },
+            {
+                "id": 3,
+                "sectionTitle": null,
+                "wordsHeaderHtml": "sent<u>e</u>nce &nbsp;|&nbsp; w<u>or</u>ld &nbsp;|&nbsp; pict<u>u</u>re &nbsp;|&nbsp; dang<u>e</u>rous",
+                "requirement": "Chọn từ có phần gạch chân phát âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "sentence", "underlinedHtml": "sent<u>e</u>nce", "isCorrect": false},
+                    {"word": "world", "underlinedHtml": "w<u>or</u>ld", "isCorrect": true},
+                    {"word": "picture", "underlinedHtml": "pict<u>u</u>re", "isCorrect": false},
+                    {"word": "dangerous", "underlinedHtml": "dang<u>e</u>rous", "isCorrect": false}
+                ],
+                "analysis": [
+                    {"word": "sentence", "type": "n", "ipa": "/ə/", "meaning": "câu văn"},
+                    {"word": "world", "type": "n", "ipa": "/ɜː/", "meaning": "thế giới"},
+                    {"word": "picture", "type": "n", "ipa": "/ə/", "meaning": "bức tranh"},
+                    {"word": "dangerous", "type": "adj", "ipa": "/ə/", "meaning": "nguy hiểm"}
+                ],
+                "whyWord": "world",
+                "whyText": "Phần gạch chân ở world phát âm là /ɜː/, trong khi các từ còn lại phát âm là /ə/."
+            },
+            {
+                "id": 4,
+                "sectionTitle": null,
+                "wordsHeaderHtml": "s<u>ur</u>fing &nbsp;|&nbsp; c<u>o</u>llect &nbsp;|&nbsp; c<u>o</u>ncert &nbsp;|&nbsp; mel<u>o</u>dy",
+                "requirement": "Chọn từ có phần gạch chân phát âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "surfing", "underlinedHtml": "s<u>ur</u>fing", "isCorrect": true},
+                    {"word": "collect", "underlinedHtml": "c<u>o</u>llect", "isCorrect": false},
+                    {"word": "concert", "underlinedHtml": "c<u>o</u>ncert", "isCorrect": false},
+                    {"word": "melody", "underlinedHtml": "mel<u>o</u>dy", "isCorrect": false}
+                ],
+                "analysis": [
+                    {"word": "surfing", "type": "n", "ipa": "/ɜː/", "meaning": "môn lướt sóng"},
+                    {"word": "collect", "type": "v", "ipa": "/ə/", "meaning": "thu thập"},
+                    {"word": "concert", "type": "n", "ipa": "/ə/", "meaning": "buổi hòa nhạc"},
+                    {"word": "melody", "type": "n", "ipa": "/ə/", "meaning": "giai điệu"}
+                ],
+                "whyWord": "surfing",
+                "whyText": "Phần gạch chân ở surfing phát âm là /ɜː/, trong khi các từ còn lại phát âm là /ə/."
+            },
+            {
+                "id": 5,
+                "sectionTitle": null,
+                "wordsHeaderHtml": "w<u>or</u>st &nbsp;|&nbsp; l<u>ear</u>n &nbsp;|&nbsp; c<u>o</u>ntrol &nbsp;|&nbsp; d<u>es</u>sert",
+                "requirement": "Chọn từ có phần gạch chân phát âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "worst", "underlinedHtml": "w<u>or</u>st", "isCorrect": false},
+                    {"word": "learn", "underlinedHtml": "l<u>ear</u>n", "isCorrect": false},
+                    {"word": "control", "underlinedHtml": "c<u>o</u>ntrol", "isCorrect": true},
+                    {"word": "dessert", "underlinedHtml": "d<u>es</u>sert", "isCorrect": false}
+                ],
+                "analysis": [
+                    {"word": "worst", "type": "adj", "ipa": "/ɜː/", "meaning": "tệ nhất"},
+                    {"word": "learn", "type": "v", "ipa": "/ɜː/", "meaning": "học hỏi"},
+                    {"word": "control", "type": "v/n", "ipa": "/ə/", "meaning": "điều khiển, kiểm soát"},
+                    {"word": "dessert", "type": "n", "ipa": "/ɜː/", "meaning": "món tráng miệng"}
+                ],
+                "whyWord": "control",
+                "whyText": "Phần gạch chân ở control phát âm là /ə/, trong khi các từ còn lại phát âm là /ɜː/."
+            },
+            {
+                "id": 6,
+                "sectionTitle": null,
+                "wordsHeaderHtml": "b<u>ir</u>d &nbsp;|&nbsp; g<u>ir</u>l &nbsp;|&nbsp; f<u>ir</u>st &nbsp;|&nbsp; sist<u>e</u>r",
+                "requirement": "Chọn từ có phần gạch chân phát âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "bird", "underlinedHtml": "b<u>ir</u>d", "isCorrect": false},
+                    {"word": "girl", "underlinedHtml": "g<u>ir</u>l", "isCorrect": false},
+                    {"word": "first", "underlinedHtml": "f<u>ir</u>st", "isCorrect": false},
+                    {"word": "sister", "underlinedHtml": "sist<u>e</u>r", "isCorrect": true}
+                ],
+                "analysis": [
+                    {"word": "bird", "type": "n", "ipa": "/ɜː/", "meaning": "con chim"},
+                    {"word": "girl", "type": "n", "ipa": "/ɜː/", "meaning": "cô gái"},
+                    {"word": "first", "type": "adj", "ipa": "/ɜː/", "meaning": "đầu tiên"},
+                    {"word": "sister", "type": "n", "ipa": "/ə/", "meaning": "chị/em gái"}
+                ],
+                "whyWord": "sister",
+                "whyText": "Phần gạch chân ở sister phát âm là /ə/, trong khi các từ còn lại phát âm là /ɜː/."
+            },
+            {
+                "id": 7,
+                "sectionTitle": null,
+                "wordsHeaderHtml": "o<u>f</u> &nbsp;|&nbsp; <u>f</u>unny &nbsp;|&nbsp; wi<u>f</u>e &nbsp;|&nbsp; bookshel<u>f</u>",
+                "requirement": "Chọn từ có phần gạch chân phát âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "of", "underlinedHtml": "o<u>f</u>", "isCorrect": true},
+                    {"word": "funny", "underlinedHtml": "<u>f</u>unny", "isCorrect": false},
+                    {"word": "wife", "underlinedHtml": "wi<u>f</u>e", "isCorrect": false},
+                    {"word": "bookshelf", "underlinedHtml": "bookshel<u>f</u>", "isCorrect": false}
+                ],
+                "analysis": [
+                    {"word": "of", "type": "prep", "ipa": "/v/", "meaning": "của"},
+                    {"word": "funny", "type": "adj", "ipa": "/f/", "meaning": "hài hước"},
+                    {"word": "wife", "type": "n", "ipa": "/f/", "meaning": "người vợ"},
+                    {"word": "bookshelf", "type": "n", "ipa": "/f/", "meaning": "kệ sách"}
+                ],
+                "whyWord": "of",
+                "whyText": "Phần gạch chân (f) ở of phát âm là /v/, trong khi các từ còn lại phát âm là /f/."
+            },
+            {
+                "id": 8,
+                "sectionTitle": null,
+                "wordsHeaderHtml": "rou<u>gh</u> &nbsp;|&nbsp; cou<u>gh</u> &nbsp;|&nbsp; althou<u>gh</u> &nbsp;|&nbsp; enou<u>gh</u>",
+                "requirement": "Chọn từ có phần gạch chân phát âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "rough", "underlinedHtml": "rou<u>gh</u>", "isCorrect": false},
+                    {"word": "cough", "underlinedHtml": "cou<u>gh</u>", "isCorrect": false},
+                    {"word": "although", "underlinedHtml": "althou<u>gh</u>", "isCorrect": true},
+                    {"word": "enough", "underlinedHtml": "enou<u>gh</u>", "isCorrect": false}
+                ],
+                "analysis": [
+                    {"word": "rough", "type": "adj", "ipa": "/f/", "meaning": "gồ ghề, thô"},
+                    {"word": "cough", "type": "v/n", "ipa": "/f/", "meaning": "ho"},
+                    {"word": "although", "type": "conj", "ipa": "câm", "meaning": "mặc dù"},
+                    {"word": "enough", "type": "adj/adv", "ipa": "/f/", "meaning": "đủ"}
+                ],
+                "whyWord": "although",
+                "whyText": "Đuôi -gh ở although là âm câm (không phát âm), trong khi ở các từ còn lại phát âm là /f/."
+            },
+            {
+                "id": 9,
+                "sectionTitle": null,
+                "wordsHeaderHtml": "pick<u>ed</u> &nbsp;|&nbsp; promis<u>ed</u> &nbsp;|&nbsp; deliver<u>ed</u> &nbsp;|&nbsp; click<u>ed</u>",
+                "requirement": "Chọn từ có phần gạch chân phát âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "picked", "underlinedHtml": "pick<u>ed</u>", "isCorrect": false},
+                    {"word": "promised", "underlinedHtml": "promis<u>ed</u>", "isCorrect": false},
+                    {"word": "delivered", "underlinedHtml": "deliver<u>ed</u>", "isCorrect": true},
+                    {"word": "clicked", "underlinedHtml": "click<u>ed</u>", "isCorrect": false}
+                ],
+                "analysis": [
+                    {"word": "picked", "type": "v-ed", "ipa": "/t/", "meaning": "đã hái/chọn"},
+                    {"word": "promised", "type": "v-ed", "ipa": "/t/", "meaning": "đã hứa"},
+                    {"word": "delivered", "type": "v-ed", "ipa": "/d/", "meaning": "đã giao hàng"},
+                    {"word": "clicked", "type": "v-ed", "ipa": "/t/", "meaning": "đã nhấp chuột"}
+                ],
+                "whyWord": "delivered",
+                "whyText": "Đuôi -ed ở delivered phát âm là /d/ (kết thúc bằng âm hữu thanh /r/), trong khi các từ còn lại phát âm là /t/."
+            },
+            {
+                "id": 10,
+                "sectionTitle": null,
+                "wordsHeaderHtml": "jump<u>ed</u> &nbsp;|&nbsp; wash<u>ed</u> &nbsp;|&nbsp; lik<u>ed</u> &nbsp;|&nbsp; need<u>ed</u>",
+                "requirement": "Chọn từ có phần gạch chân phát âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "jumped", "underlinedHtml": "jump<u>ed</u>", "isCorrect": false},
+                    {"word": "washed", "underlinedHtml": "wash<u>ed</u>", "isCorrect": false},
+                    {"word": "liked", "underlinedHtml": "lik<u>ed</u>", "isCorrect": false},
+                    {"word": "needed", "underlinedHtml": "need<u>ed</u>", "isCorrect": true}
+                ],
+                "analysis": [
+                    {"word": "jumped", "type": "v-ed", "ipa": "/t/", "meaning": "đã nhảy"},
+                    {"word": "washed", "type": "v-ed", "ipa": "/t/", "meaning": "đã rửa/giặt"},
+                    {"word": "liked", "type": "v-ed", "ipa": "/t/", "meaning": "đã thích"},
+                    {"word": "needed", "type": "v-ed", "ipa": "/ɪd/", "meaning": "đã cần"}
+                ],
+                "whyWord": "needed",
+                "whyText": "Đuôi -ed ở needed phát âm là /ɪd/ (kết thúc bằng âm /d/), trong khi các từ còn lại phát âm là /t/."
+            },
+            {
+                "id": 11,
+                "sectionTitle": null,
+                "wordsHeaderHtml": "manag<u>ed</u> &nbsp;|&nbsp; talk<u>ed</u> &nbsp;|&nbsp; wash<u>ed</u> &nbsp;|&nbsp; book<u>ed</u>",
+                "requirement": "Chọn từ có phần gạch chân phát âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "managed", "underlinedHtml": "manag<u>ed</u>", "isCorrect": true},
+                    {"word": "talked", "underlinedHtml": "talk<u>ed</u>", "isCorrect": false},
+                    {"word": "washed", "underlinedHtml": "wash<u>ed</u>", "isCorrect": false},
+                    {"word": "booked", "underlinedHtml": "book<u>ed</u>", "isCorrect": false}
+                ],
+                "analysis": [
+                    {"word": "managed", "type": "v-ed", "ipa": "/d/", "meaning": "đã quản lý/xoay sở"},
+                    {"word": "talked", "type": "v-ed", "ipa": "/t/", "meaning": "đã nói chuyện"},
+                    {"word": "washed", "type": "v-ed", "ipa": "/t/", "meaning": "đã rửa"},
+                    {"word": "booked", "type": "v-ed", "ipa": "/t/", "meaning": "đã đặt chỗ"}
+                ],
+                "whyWord": "managed",
+                "whyText": "Đuôi -ed ở managed phát âm là /d/, trong khi các từ còn lại phát âm là /t/."
+            },
+            {
+                "id": 12,
+                "sectionTitle": null,
+                "wordsHeaderHtml": "danc<u>ed</u> &nbsp;|&nbsp; disappoint<u>ed</u> &nbsp;|&nbsp; need<u>ed</u> &nbsp;|&nbsp; want<u>ed</u>",
+                "requirement": "Chọn từ có phần gạch chân phát âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "danced", "underlinedHtml": "danc<u>ed</u>", "isCorrect": true},
+                    {"word": "disappointed", "underlinedHtml": "disappoint<u>ed</u>", "isCorrect": false},
+                    {"word": "needed", "underlinedHtml": "need<u>ed</u>", "isCorrect": false},
+                    {"word": "wanted", "underlinedHtml": "want<u>ed</u>", "isCorrect": false}
+                ],
+                "analysis": [
+                    {"word": "danced", "type": "v-ed", "ipa": "/t/", "meaning": "đã nhảy múa"},
+                    {"word": "disappointed", "type": "v-ed", "ipa": "/ɪd/", "meaning": "đã thất vọng"},
+                    {"word": "needed", "type": "v-ed", "ipa": "/ɪd/", "meaning": "đã cần"},
+                    {"word": "wanted", "type": "v-ed", "ipa": "/ɪd/", "meaning": "đã muốn"}
+                ],
+                "whyWord": "danced",
+                "whyText": "Đuôi -ed ở danced phát âm là /t/, trong khi các từ còn lại phát âm là /ɪd/."
+            },
+            {
+                "id": 13,
+                "sectionTitle": null,
+                "wordsHeaderHtml": "follow<u>ed</u> &nbsp;|&nbsp; fix<u>ed</u> &nbsp;|&nbsp; miss<u>ed</u> &nbsp;|&nbsp; talk<u>ed</u>",
+                "requirement": "Chọn từ có phần gạch chân phát âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "followed", "underlinedHtml": "follow<u>ed</u>", "isCorrect": true},
+                    {"word": "fixed", "underlinedHtml": "fix<u>ed</u>", "isCorrect": false},
+                    {"word": "missed", "underlinedHtml": "miss<u>ed</u>", "isCorrect": false},
+                    {"word": "talked", "underlinedHtml": "talk<u>ed</u>", "isCorrect": false}
+                ],
+                "analysis": [
+                    {"word": "followed", "type": "v-ed", "ipa": "/d/", "meaning": "đã theo dõi"},
+                    {"word": "fixed", "type": "v-ed", "ipa": "/t/", "meaning": "đã sửa chữa"},
+                    {"word": "missed", "type": "v-ed", "ipa": "/t/", "meaning": "đã bỏ lỡ/nhớ"},
+                    {"word": "talked", "type": "v-ed", "ipa": "/t/", "meaning": "đã nói chuyện"}
+                ],
+                "whyWord": "followed",
+                "whyText": "Đuôi -ed ở followed phát âm là /d/, trong khi các từ còn lại phát âm là /t/."
+            },
+            {
+                "id": 14,
+                "sectionTitle": null,
+                "wordsHeaderHtml": "escap<u>ed</u> &nbsp;|&nbsp; lik<u>ed</u> &nbsp;|&nbsp; decid<u>ed</u> &nbsp;|&nbsp; wash<u>ed</u>",
+                "requirement": "Chọn từ có phần gạch chân phát âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "escaped", "underlinedHtml": "escap<u>ed</u>", "isCorrect": false},
+                    {"word": "liked", "underlinedHtml": "lik<u>ed</u>", "isCorrect": false},
+                    {"word": "decided", "underlinedHtml": "decid<u>ed</u>", "isCorrect": true},
+                    {"word": "washed", "underlinedHtml": "wash<u>ed</u>", "isCorrect": false}
+                ],
+                "analysis": [
+                    {"word": "escaped", "type": "v-ed", "ipa": "/t/", "meaning": "đã trốn thoát"},
+                    {"word": "liked", "type": "v-ed", "ipa": "/t/", "meaning": "đã thích"},
+                    {"word": "decided", "type": "v-ed", "ipa": "/ɪd/", "meaning": "đã quyết định"},
+                    {"word": "washed", "type": "v-ed", "ipa": "/t/", "meaning": "đã rửa"}
+                ],
+                "whyWord": "decided",
+                "whyText": "Đuôi -ed ở decided phát âm là /ɪd/, trong khi các từ còn lại phát âm là /t/."
+            },
+            {
+                "id": 15,
+                "sectionTitle": null,
+                "wordsHeaderHtml": "annoy<u>ed</u> &nbsp;|&nbsp; phon<u>ed</u> &nbsp;|&nbsp; watch<u>ed</u> &nbsp;|&nbsp; remember<u>ed</u>",
+                "requirement": "Chọn từ có phần gạch chân phát âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "annoyed", "underlinedHtml": "annoy<u>ed</u>", "isCorrect": false},
+                    {"word": "phoned", "underlinedHtml": "phon<u>ed</u>", "isCorrect": false},
+                    {"word": "watched", "underlinedHtml": "watch<u>ed</u>", "isCorrect": true},
+                    {"word": "remembered", "underlinedHtml": "remember<u>ed</u>", "isCorrect": false}
+                ],
+                "analysis": [
+                    {"word": "annoyed", "type": "v-ed", "ipa": "/d/", "meaning": "đã làm phiền"},
+                    {"word": "phoned", "type": "v-ed", "ipa": "/d/", "meaning": "đã gọi điện"},
+                    {"word": "watched", "type": "v-ed", "ipa": "/t/", "meaning": "đã xem"},
+                    {"word": "remembered", "type": "v-ed", "ipa": "/d/", "meaning": "đã nhớ"}
+                ],
+                "whyWord": "watched",
+                "whyText": "Đuôi -ed ở watched phát âm là /t/ (kết thúc bằng /tʃ/), trong khi các từ còn lại phát âm là /d/."
+            },
+            {
+                "id": 16,
+                "sectionTitle": null,
+                "wordsHeaderHtml": "hurri<u>ed</u> &nbsp;|&nbsp; decid<u>ed</u> &nbsp;|&nbsp; plann<u>ed</u> &nbsp;|&nbsp; wonder<u>ed</u>",
+                "requirement": "Chọn từ có phần gạch chân phát âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "hurried", "underlinedHtml": "hurri<u>ed</u>", "isCorrect": false},
+                    {"word": "decided", "underlinedHtml": "decid<u>ed</u>", "isCorrect": true},
+                    {"word": "planned", "underlinedHtml": "plann<u>ed</u>", "isCorrect": false},
+                    {"word": "wondered", "underlinedHtml": "wonder<u>ed</u>", "isCorrect": false}
+                ],
+                "analysis": [
+                    {"word": "hurried", "type": "v-ed", "ipa": "/d/", "meaning": "đã vội vã"},
+                    {"word": "decided", "type": "v-ed", "ipa": "/ɪd/", "meaning": "đã quyết định"},
+                    {"word": "planned", "type": "v-ed", "ipa": "/d/", "meaning": "đã lên kế hoạch"},
+                    {"word": "wondered", "type": "v-ed", "ipa": "/d/", "meaning": "đã băn khoăn"}
+                ],
+                "whyWord": "decided",
+                "whyText": "Đuôi -ed ở decided phát âm là /ɪd/, trong khi các từ còn lại phát âm là /d/."
+            },
+            {
+                "id": 17,
+                "sectionTitle": null,
+                "wordsHeaderHtml": "post<u>ed</u> &nbsp;|&nbsp; add<u>ed</u> &nbsp;|&nbsp; manag<u>ed</u> &nbsp;|&nbsp; arrest<u>ed</u>",
+                "requirement": "Chọn từ có phần gạch chân phát âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "posted", "underlinedHtml": "post<u>ed</u>", "isCorrect": false},
+                    {"word": "added", "underlinedHtml": "add<u>ed</u>", "isCorrect": false},
+                    {"word": "managed", "underlinedHtml": "manag<u>ed</u>", "isCorrect": true},
+                    {"word": "arrested", "underlinedHtml": "arrest<u>ed</u>", "isCorrect": false}
+                ],
+                "analysis": [
+                    {"word": "posted", "type": "v-ed", "ipa": "/ɪd/", "meaning": "đã đăng bài"},
+                    {"word": "added", "type": "v-ed", "ipa": "/ɪd/", "meaning": "đã thêm vào"},
+                    {"word": "managed", "type": "v-ed", "ipa": "/d/", "meaning": "đã quản lý"},
+                    {"word": "arrested", "type": "v-ed", "ipa": "/ɪd/", "meaning": "đã bắt giữ"}
+                ],
+                "whyWord": "managed",
+                "whyText": "Đuôi -ed ở managed phát âm là /d/, trong khi các từ còn lại phát âm là /ɪd/."
+            },
+            {
+                "id": 18,
+                "sectionTitle": null,
+                "wordsHeaderHtml": "ques<u>ti</u>on &nbsp;|&nbsp; sta<u>ti</u>on &nbsp;|&nbsp; op<u>ti</u>on &nbsp;|&nbsp; invita<u>ti</u>on",
+                "requirement": "Chọn từ có phần gạch chân phát âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "question", "underlinedHtml": "ques<u>ti</u>on", "isCorrect": true},
+                    {"word": "station", "underlinedHtml": "sta<u>ti</u>on", "isCorrect": false},
+                    {"word": "option", "underlinedHtml": "op<u>ti</u>on", "isCorrect": false},
+                    {"word": "invitation", "underlinedHtml": "invita<u>ti</u>on", "isCorrect": false}
+                ],
+                "analysis": [
+                    {"word": "question", "type": "n", "ipa": "/tʃ/", "meaning": "câu hỏi"},
+                    {"word": "station", "type": "n", "ipa": "/ʃ/", "meaning": "nhà ga"},
+                    {"word": "option", "type": "n", "ipa": "/ʃ/", "meaning": "lựa chọn"},
+                    {"word": "invitation", "type": "n", "ipa": "/ʃ/", "meaning": "lời mời"}
+                ],
+                "whyWord": "question",
+                "whyText": "Phần gạch chân (tion) ở question phát âm là /tʃ/, trong khi các từ còn lại phát âm là /ʃ/."
+            },
+            {
+                "id": 19,
+                "sectionTitle": null,
+                "wordsHeaderHtml": "deci<u>si</u>on &nbsp;|&nbsp; televi<u>si</u>on &nbsp;|&nbsp; <u>s</u>ugar &nbsp;|&nbsp; vi<u>su</u>al",
+                "requirement": "Chọn từ có phần gạch chân phát âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "decision", "underlinedHtml": "deci<u>si</u>on", "isCorrect": false},
+                    {"word": "television", "underlinedHtml": "televi<u>si</u>on", "isCorrect": false},
+                    {"word": "sugar", "underlinedHtml": "<u>s</u>ugar", "isCorrect": true},
+                    {"word": "visual", "underlinedHtml": "vi<u>su</u>al", "isCorrect": false}
+                ],
+                "analysis": [
+                    {"word": "decision", "type": "n", "ipa": "/ʒ/", "meaning": "quyết định"},
+                    {"word": "television", "type": "n", "ipa": "/ʒ/", "meaning": "ti vi"},
+                    {"word": "sugar", "type": "n", "ipa": "/ʃ/", "meaning": "đường ăn"},
+                    {"word": "visual", "type": "adj", "ipa": "/ʒ/", "meaning": "thuộc thị giác"}
+                ],
+                "whyWord": "sugar",
+                "whyText": "Phần gạch chân ở sugar phát âm là /ʃ/, trong khi các từ còn lại phát âm là /ʒ/."
+            },
+            {
+                "id": 20,
+                "sectionTitle": null,
+                "wordsHeaderHtml": "divi<u>si</u>on &nbsp;|&nbsp; occa<u>si</u>on &nbsp;|&nbsp; lei<u>su</u>re &nbsp;|&nbsp; en<u>su</u>re",
+                "requirement": "Chọn từ có phần gạch chân phát âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "division", "underlinedHtml": "divi<u>si</u>on", "isCorrect": false},
+                    {"word": "occasion", "underlinedHtml": "occa<u>si</u>on", "isCorrect": false},
+                    {"word": "leisure", "underlinedHtml": "lei<u>su</u>re", "isCorrect": false},
+                    {"word": "ensure", "underlinedHtml": "en<u>su</u>re", "isCorrect": true}
+                ],
+                "analysis": [
+                    {"word": "division", "type": "n", "ipa": "/ʒ/", "meaning": "sự chia ra"},
+                    {"word": "occasion", "type": "n", "ipa": "/ʒ/", "meaning": "dịp, cơ hội"},
+                    {"word": "leisure", "type": "n", "ipa": "/ʒ/", "meaning": "thì giờ rảnh rỗi"},
+                    {"word": "ensure", "type": "v", "ipa": "/ʃ/", "meaning": "đảm bảo"}
+                ],
+                "whyWord": "ensure",
+                "whyText": "Phần gạch chân ở ensure phát âm là /ʃ/, trong khi các từ còn lại phát âm là /ʒ/."
+            },
+            {
+                "id": 21,
+                "sectionTitle": null,
+                "wordsHeaderHtml": "exhibi<u>ti</u>on &nbsp;|&nbsp; revi<u>si</u>on &nbsp;|&nbsp; an<u>xi</u>ous &nbsp;|&nbsp; so<u>ci</u>al",
+                "requirement": "Chọn từ có phần gạch chân phát âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "exhibition", "underlinedHtml": "exhibi<u>ti</u>on", "isCorrect": false},
+                    {"word": "revision", "underlinedHtml": "revi<u>si</u>on", "isCorrect": true},
+                    {"word": "anxious", "underlinedHtml": "an<u>xi</u>ous", "isCorrect": false},
+                    {"word": "social", "underlinedHtml": "so<u>ci</u>al", "isCorrect": false}
+                ],
+                "analysis": [
+                    {"word": "exhibition", "type": "n", "ipa": "/ʃ/", "meaning": "triển lãm"},
+                    {"word": "revision", "type": "n", "ipa": "/ʒ/", "meaning": "sự ôn tập"},
+                    {"word": "anxious", "type": "adj", "ipa": "/ʃ/", "meaning": "lo âu"},
+                    {"word": "social", "type": "adj", "ipa": "/ʃ/", "meaning": "thuộc xã hội"}
+                ],
+                "whyWord": "revision",
+                "whyText": "Phần gạch chân ở revision phát âm là /ʒ/, trong khi các từ còn lại phát âm là /ʃ/."
+            },
+            {
+                "id": 22,
+                "sectionTitle": null,
+                "wordsHeaderHtml": "<u>st</u>ory &nbsp;|&nbsp; vi<u>si</u>on &nbsp;|&nbsp; mea<u>su</u>re &nbsp;|&nbsp; conclu<u>si</u>on",
+                "requirement": "Chọn từ có phần gạch chân phát âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "story", "underlinedHtml": "<u>st</u>ory", "isCorrect": true},
+                    {"word": "vision", "underlinedHtml": "vi<u>si</u>on", "isCorrect": false},
+                    {"word": "measure", "underlinedHtml": "mea<u>su</u>re", "isCorrect": false},
+                    {"word": "conclusion", "underlinedHtml": "conclu<u>si</u>on", "isCorrect": false}
+                ],
+                "analysis": [
+                    {"word": "story", "type": "n", "ipa": "/s/", "meaning": "câu chuyện"},
+                    {"word": "vision", "type": "n", "ipa": "/ʒ/", "meaning": "tầm nhìn"},
+                    {"word": "measure", "type": "v/n", "ipa": "/ʒ/", "meaning": "đo lường"},
+                    {"word": "conclusion", "type": "n", "ipa": "/ʒ/", "meaning": "kết luận"}
+                ],
+                "whyWord": "story",
+                "whyText": "Phần gạch chân ở story phát âm là /s/, trong khi các từ còn lại phát âm là /ʒ/."
+            },
+            {
+                "id": 23,
+                "sectionTitle": null,
+                "wordsHeaderHtml": "sta<u>ti</u>on &nbsp;|&nbsp; informa<u>ti</u>on &nbsp;|&nbsp; op<u>ti</u>on &nbsp;|&nbsp; ques<u>ti</u>on",
+                "requirement": "Chọn từ có phần gạch chân phát âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "station", "underlinedHtml": "sta<u>ti</u>on", "isCorrect": false},
+                    {"word": "information", "underlinedHtml": "informa<u>ti</u>on", "isCorrect": false},
+                    {"word": "option", "underlinedHtml": "op<u>ti</u>on", "isCorrect": false},
+                    {"word": "question", "underlinedHtml": "ques<u>ti</u>on", "isCorrect": true}
+                ],
+                "analysis": [
+                    {"word": "station", "type": "n", "ipa": "/ʃ/", "meaning": "nhà ga"},
+                    {"word": "information", "type": "n", "ipa": "/ʃ/", "meaning": "thông tin"},
+                    {"word": "option", "type": "n", "ipa": "/ʃ/", "meaning": "lựa chọn"},
+                    {"word": "question", "type": "n", "ipa": "/tʃ/", "meaning": "câu hỏi"}
+                ],
+                "whyWord": "question",
+                "whyText": "Phần gạch chân ở question phát âm là /tʃ/, trong khi các từ còn lại phát âm là /ʃ/."
+            },
+            {
+                "id": 24,
+                "sectionTitle": null,
+                "wordsHeaderHtml": "<u>ch</u>emist &nbsp;|&nbsp; <u>ch</u>ildren &nbsp;|&nbsp; <u>Ch</u>ristmas &nbsp;|&nbsp; ar<u>ch</u>itect",
+                "requirement": "Chọn từ có phần gạch chân phát âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "chemist", "underlinedHtml": "<u>ch</u>emist", "isCorrect": false},
+                    {"word": "children", "underlinedHtml": "<u>ch</u>ildren", "isCorrect": true},
+                    {"word": "Christmas", "underlinedHtml": "<u>Ch</u>ristmas", "isCorrect": false},
+                    {"word": "architect", "underlinedHtml": "ar<u>ch</u>itect", "isCorrect": false}
+                ],
+                "analysis": [
+                    {"word": "chemist", "type": "n", "ipa": "/k/", "meaning": "nhà hóa học"},
+                    {"word": "children", "type": "n", "ipa": "/tʃ/", "meaning": "trẻ em"},
+                    {"word": "Christmas", "type": "n", "ipa": "/k/", "meaning": "Giáng sinh"},
+                    {"word": "architect", "type": "n", "ipa": "/k/", "meaning": "kiến trúc sư"}
+                ],
+                "whyWord": "children",
+                "whyText": "Phần gạch chân (ch) ở children phát âm là /tʃ/, trong khi các từ còn lại phát âm là /k/."
+            },
+            {
+                "id": 25,
+                "sectionTitle": null,
+                "wordsHeaderHtml": "na<u>tu</u>re &nbsp;|&nbsp; architec<u>tu</u>re &nbsp;|&nbsp; informa<u>ti</u>on &nbsp;|&nbsp; litera<u>tu</u>re",
+                "requirement": "Chọn từ có phần gạch chân phát âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "nature", "underlinedHtml": "na<u>tu</u>re", "isCorrect": false},
+                    {"word": "architecture", "underlinedHtml": "architec<u>tu</u>re", "isCorrect": false},
+                    {"word": "information", "underlinedHtml": "informa<u>ti</u>on", "isCorrect": true},
+                    {"word": "literature", "underlinedHtml": "litera<u>tu</u>re", "isCorrect": false}
+                ],
+                "analysis": [
+                    {"word": "nature", "type": "n", "ipa": "/tʃ/", "meaning": "tự nhiên"},
+                    {"word": "architecture", "type": "n", "ipa": "/tʃ/", "meaning": "kiến trúc"},
+                    {"word": "information", "type": "n", "ipa": "/ʃ/", "meaning": "thông tin"},
+                    {"word": "literature", "type": "n", "ipa": "/tʃ/", "meaning": "văn học"}
+                ],
+                "whyWord": "information",
+                "whyText": "Phần gạch chân ở information phát âm là /ʃ/, trong khi các từ còn lại phát âm là /tʃ/."
+            },
+
+            // PART II: STRESS (26-40)
+            {
+                "id": 26,
+                "sectionTitle": "II. Choose the word that has main stress placed differently from the others.",
+                "wordsHeaderHtml": "sculpture &nbsp;|&nbsp; concert &nbsp;|&nbsp; control &nbsp;|&nbsp; puppet",
+                "requirement": "Chọn từ có trọng âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "sculpture", "underlinedHtml": "sculpture", "isCorrect": false},
+                    {"word": "concert", "underlinedHtml": "concert", "isCorrect": false},
+                    {"word": "control", "underlinedHtml": "control", "isCorrect": true},
+                    {"word": "puppet", "underlinedHtml": "puppet", "isCorrect": false}
+                ],
+                "analysis": [
+                    {"word": "sculpture", "type": "n", "ipa": "/ˈskʌlp.tʃər/", "meaning": "trọng âm 1 (bức tượng chạm khắc)"},
+                    {"word": "concert", "type": "n", "ipa": "/ˈkɒn.sət/", "meaning": "trọng âm 1 (buổi hòa nhạc)"},
+                    {"word": "control", "type": "v/n", "ipa": "/kənˈtrəʊl/", "meaning": "trọng âm 2 (kiểm soát)"},
+                    {"word": "puppet", "type": "n", "ipa": "/ˈpʌp.ɪt/", "meaning": "trọng âm 1 (con rối)"}
+                ],
+                "whyWord": "control",
+                "whyText": "Trọng âm của control nhấn vào âm tiết thứ 2, trong khi các từ còn lại có trọng âm nhấn vào âm tiết thứ 1."
+            },
+            {
+                "id": 27,
+                "sectionTitle": null,
+                "wordsHeaderHtml": "outdoor &nbsp;|&nbsp; royal &nbsp;|&nbsp; midterm &nbsp;|&nbsp; music",
+                "requirement": "Chọn từ có trọng âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "outdoor", "underlinedHtml": "outdoor", "isCorrect": false},
+                    {"word": "royal", "underlinedHtml": "royal", "isCorrect": false},
+                    {"word": "midterm", "underlinedHtml": "midterm", "isCorrect": true},
+                    {"word": "music", "underlinedHtml": "music", "isCorrect": false}
+                ],
+                "analysis": [
+                    {"word": "outdoor", "type": "adj", "ipa": "/ˈaʊt.dɔːr/", "meaning": "trọng âm 1 (ngoài trời)"},
+                    {"word": "royal", "type": "adj", "ipa": "/ˈrɔɪ.əl/", "meaning": "trọng âm 1 (hoàng gia)"},
+                    {"word": "midterm", "type": "n", "ipa": "/ˌmɪdˈtɜːm/", "meaning": "trọng âm 2 (giữa kỳ)"},
+                    {"word": "music", "type": "n", "ipa": "/ˈmjuː.zɪk/", "meaning": "trọng âm 1 (âm nhạc)"}
+                ],
+                "whyWord": "midterm",
+                "whyText": "Trọng âm của midterm nhấn vào âm tiết thứ 2, trong khi các từ còn lại có trọng âm nhấn vào âm tiết thứ 1."
+            },
+            {
+                "id": 28,
+                "sectionTitle": null,
+                "wordsHeaderHtml": "service &nbsp;|&nbsp; extra &nbsp;|&nbsp; private &nbsp;|&nbsp; resource",
+                "requirement": "Chọn từ có trọng âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "service", "underlinedHtml": "service", "isCorrect": false},
+                    {"word": "extra", "underlinedHtml": "extra", "isCorrect": false},
+                    {"word": "private", "underlinedHtml": "private", "isCorrect": false},
+                    {"word": "resource", "underlinedHtml": "resource", "isCorrect": true}
+                ],
+                "analysis": [
+                    {"word": "service", "type": "n", "ipa": "/ˈsɜː.vɪs/", "meaning": "trọng âm 1 (dịch vụ)"},
+                    {"word": "extra", "type": "adj", "ipa": "/ˈek.strə/", "meaning": "trọng âm 1 (thêm vào)"},
+                    {"word": "private", "type": "adj", "ipa": "/ˈpraɪ.vət/", "meaning": "trọng âm 1 (riêng tư)"},
+                    {"word": "resource", "type": "n", "ipa": "/rɪˈzɔːs/", "meaning": "trọng âm 2 (tài nguyên)"}
+                ],
+                "whyWord": "resource",
+                "whyText": "Trọng âm của resource nhấn vào âm tiết thứ 2, trong khi các từ còn lại có trọng âm nhấn vào âm tiết thứ 1."
+            },
+            {
+                "id": 29,
+                "sectionTitle": null,
+                "wordsHeaderHtml": "butter &nbsp;|&nbsp; pancake &nbsp;|&nbsp; prefer &nbsp;|&nbsp; portrait",
+                "requirement": "Chọn từ có trọng âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "butter", "underlinedHtml": "butter", "isCorrect": false},
+                    {"word": "pancake", "underlinedHtml": "pancake", "isCorrect": false},
+                    {"word": "prefer", "underlinedHtml": "prefer", "isCorrect": true},
+                    {"word": "portrait", "underlinedHtml": "portrait", "isCorrect": false}
+                ],
+                "analysis": [
+                    {"word": "butter", "type": "n", "ipa": "/ˈbʌt.ər/", "meaning": "trọng âm 1 (bơ)"},
+                    {"word": "pancake", "type": "n", "ipa": "/ˈpæn.keɪk/", "meaning": "trọng âm 1 (bánh kếp)"},
+                    {"word": "prefer", "type": "v", "ipa": "/prɪˈfɜːr/", "meaning": "trọng âm 2 (thích hơn)"},
+                    {"word": "portrait", "type": "n", "ipa": "/ˈpɔː.trət/", "meaning": "trọng âm 1 (chân dung)"}
+                ],
+                "whyWord": "prefer",
+                "whyText": "Trọng âm của prefer nhấn vào âm tiết thứ 2, trong khi các từ còn lại có trọng âm nhấn vào âm tiết thứ 1."
+            },
+            {
+                "id": 30,
+                "sectionTitle": null,
+                "wordsHeaderHtml": "cooking &nbsp;|&nbsp; chili &nbsp;|&nbsp; bamboo &nbsp;|&nbsp; fragrant",
+                "requirement": "Chọn từ có trọng âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "cooking", "underlinedHtml": "cooking", "isCorrect": false},
+                    {"word": "chili", "underlinedHtml": "chili", "isCorrect": false},
+                    {"word": "bamboo", "underlinedHtml": "bamboo", "isCorrect": true},
+                    {"word": "fragrant", "underlinedHtml": "fragrant", "isCorrect": false}
+                ],
+                "analysis": [
+                    {"word": "cooking", "type": "n", "ipa": "/ˈkʊk.ɪŋ/", "meaning": "trọng âm 1 (việc nấu ăn)"},
+                    {"word": "chili", "type": "n", "ipa": "/ˈtʃɪl.i/", "meaning": "trọng âm 1 (quả ớt)"},
+                    {"word": "bamboo", "type": "n", "ipa": "/bæmˈbuː/", "meaning": "trọng âm 2 (cây tre)"},
+                    {"word": "fragrant", "type": "adj", "ipa": "/ˈfreɪ.ɡrənt/", "meaning": "trọng âm 1 (thơm ngát)"}
+                ],
+                "whyWord": "bamboo",
+                "whyText": "Trọng âm của bamboo nhấn vào âm tiết thứ 2, trong khi các từ còn lại có trọng âm nhấn vào âm tiết thứ 1."
+            },
+            {
+                "id": 31,
+                "sectionTitle": null,
+                "wordsHeaderHtml": "cuisine &nbsp;|&nbsp; flavor &nbsp;|&nbsp; salty &nbsp;|&nbsp; spicy",
+                "requirement": "Chọn từ có trọng âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "cuisine", "underlinedHtml": "cuisine", "isCorrect": true},
+                    {"word": "flavor", "underlinedHtml": "flavor", "isCorrect": false},
+                    {"word": "salty", "underlinedHtml": "salty", "isCorrect": false},
+                    {"word": "spicy", "underlinedHtml": "spicy", "isCorrect": false}
+                ],
+                "analysis": [
+                    {"word": "cuisine", "type": "n", "ipa": "/kwɪˈziːn/", "meaning": "trọng âm 2 (ẩm thực)"},
+                    {"word": "flavor", "type": "n", "ipa": "/ˈfleɪ.vər/", "meaning": "trọng âm 1 (hương vị)"},
+                    {"word": "salty", "type": "adj", "ipa": "/ˈsɔːl.ti/", "meaning": "trọng âm 1 (mặn)"},
+                    {"word": "spicy", "type": "adj", "ipa": "/ˈspaɪ.si/", "meaning": "trọng âm 1 (cay)"}
+                ],
+                "whyWord": "cuisine",
+                "whyText": "Trọng âm của cuisine nhấn vào âm tiết thứ 2, trong khi các từ còn lại có trọng âm nhấn vào âm tiết thứ 1."
+            },
+            {
+                "id": 32,
+                "sectionTitle": null,
+                "wordsHeaderHtml": "garlic &nbsp;|&nbsp; lettuce &nbsp;|&nbsp; pancake &nbsp;|&nbsp; prepare",
+                "requirement": "Chọn từ có trọng âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "garlic", "underlinedHtml": "garlic", "isCorrect": false},
+                    {"word": "lettuce", "underlinedHtml": "lettuce", "isCorrect": false},
+                    {"word": "pancake", "underlinedHtml": "pancake", "isCorrect": false},
+                    {"word": "prepare", "underlinedHtml": "prepare", "isCorrect": true}
+                ],
+                "analysis": [
+                    {"word": "garlic", "type": "n", "ipa": "/ˈɡɑː.lɪk/", "meaning": "trọng âm 1 (tỏi)"},
+                    {"word": "lettuce", "type": "n", "ipa": "/ˈlet.ɪs/", "meaning": "trọng âm 1 (rau xà lách)"},
+                    {"word": "pancake", "type": "n", "ipa": "/ˈpæn.keɪk/", "meaning": "trọng âm 1 (bánh kếp)"},
+                    {"word": "prepare", "type": "v", "ipa": "/prɪˈpeər/", "meaning": "trọng âm 2 (chuẩn bị)"}
+                ],
+                "whyWord": "prepare",
+                "whyText": "Trọng âm của prepare nhấn vào âm tiết thứ 2, trong khi các từ còn lại có trọng âm nhấn vào âm tiết thứ 1."
+            },
+            {
+                "id": 33,
+                "sectionTitle": null,
+                "wordsHeaderHtml": "sausage &nbsp;|&nbsp; tasty &nbsp;|&nbsp; appear &nbsp;|&nbsp; colour",
+                "requirement": "Chọn từ có trọng âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "sausage", "underlinedHtml": "sausage", "isCorrect": false},
+                    {"word": "tasty", "underlinedHtml": "tasty", "isCorrect": false},
+                    {"word": "appear", "underlinedHtml": "appear", "isCorrect": true},
+                    {"word": "colour", "underlinedHtml": "colour", "isCorrect": false}
+                ],
+                "analysis": [
+                    {"word": "sausage", "type": "n", "ipa": "/ˈsɒs.ɪdʒ/", "meaning": "trọng âm 1 (xúc xích)"},
+                    {"word": "tasty", "type": "adj", "ipa": "/ˈteɪ.sti/", "meaning": "trọng âm 1 (ngon)"},
+                    {"word": "appear", "type": "v", "ipa": "/əˈpɪər/", "meaning": "trọng âm 2 (xuất hiện)"},
+                    {"word": "colour", "type": "n", "ipa": "/ˈkʌl.ər/", "meaning": "trọng âm 1 (màu sắc)"}
+                ],
+                "whyWord": "appear",
+                "whyText": "Trọng âm của appear nhấn vào âm tiết thứ 2, trong khi các từ còn lại có trọng âm nhấn vào âm tiết thứ 1."
+            },
+            {
+                "id": 34,
+                "sectionTitle": null,
+                "wordsHeaderHtml": "consider &nbsp;|&nbsp; carpenter &nbsp;|&nbsp; delicious &nbsp;|&nbsp; ingredient",
+                "requirement": "Chọn từ có trọng âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "consider", "underlinedHtml": "consider", "isCorrect": false},
+                    {"word": "carpenter", "underlinedHtml": "carpenter", "isCorrect": true},
+                    {"word": "delicious", "underlinedHtml": "delicious", "isCorrect": false},
+                    {"word": "ingredient", "underlinedHtml": "ingredient", "isCorrect": false}
+                ],
+                "analysis": [
+                    {"word": "consider", "type": "v", "ipa": "/kənˈsɪd.ər/", "meaning": "trọng âm 2 (xem xét)"},
+                    {"word": "carpenter", "type": "n", "ipa": "/ˈkɑː.pɪn.tər/", "meaning": "trọng âm 1 (thợ mộc)"},
+                    {"word": "delicious", "type": "adj", "ipa": "/dɪˈlɪʃ.əs/", "meaning": "trọng âm 2 (thơm ngon)"},
+                    {"word": "ingredient", "type": "n", "ipa": "/ɪnˈɡriː.di.ənt/", "meaning": "trọng âm 2 (thành phần)"}
+                ],
+                "whyWord": "carpenter",
+                "whyText": "Trọng âm của carpenter nhấn vào âm tiết thứ 1, trong khi các từ còn lại có trọng âm nhấn vào âm tiết thứ 2."
+            },
+            {
+                "id": 35,
+                "sectionTitle": null,
+                "wordsHeaderHtml": "noodles &nbsp;|&nbsp; dinner &nbsp;|&nbsp; alone &nbsp;|&nbsp; bitter",
+                "requirement": "Chọn từ có trọng âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "noodles", "underlinedHtml": "noodles", "isCorrect": false},
+                    {"word": "dinner", "underlinedHtml": "dinner", "isCorrect": false},
+                    {"word": "alone", "underlinedHtml": "alone", "isCorrect": true},
+                    {"word": "bitter", "underlinedHtml": "bitter", "isCorrect": false}
+                ],
+                "analysis": [
+                    {"word": "noodles", "type": "n", "ipa": "/ˈnuː.dəlz/", "meaning": "trọng âm 1 (mì, bún)"},
+                    {"word": "dinner", "type": "n", "ipa": "/ˈdɪn.ər/", "meaning": "trọng âm 1 (bữa tối)"},
+                    {"word": "alone", "type": "adj/adv", "ipa": "/əˈləʊn/", "meaning": "trọng âm 2 (một mình)"},
+                    {"word": "bitter", "type": "adj", "ipa": "/ˈbɪt.ər/", "meaning": "trọng âm 1 (đắng)"}
+                ],
+                "whyWord": "alone",
+                "whyText": "Trọng âm của alone nhấn vào âm tiết thứ 2, trong khi các từ còn lại có trọng âm nhấn vào âm tiết thứ 1."
+            },
+            {
+                "id": 36,
+                "sectionTitle": null,
+                "wordsHeaderHtml": "perform &nbsp;|&nbsp; painting &nbsp;|&nbsp; concert &nbsp;|&nbsp; cello",
+                "requirement": "Chọn từ có trọng âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "perform", "underlinedHtml": "perform", "isCorrect": true},
+                    {"word": "painting", "underlinedHtml": "painting", "isCorrect": false},
+                    {"word": "concert", "underlinedHtml": "concert", "isCorrect": false},
+                    {"word": "cello", "underlinedHtml": "cello", "isCorrect": false}
+                ],
+                "analysis": [
+                    {"word": "perform", "type": "v", "ipa": "/pəˈfɔːm/", "meaning": "trọng âm 2 (biểu diễn)"},
+                    {"word": "painting", "type": "n", "ipa": "/ˈpeɪn.tɪŋ/", "meaning": "trọng âm 1 (bức tranh)"},
+                    {"word": "concert", "type": "n", "ipa": "/ˈkɒn.sət/", "meaning": "trọng âm 1 (buổi hòa nhạc)"},
+                    {"word": "cello", "type": "n", "ipa": "/ˈtʃel.əʊ/", "meaning": "trọng âm 1 (đàn xen-lô)"}
+                ],
+                "whyWord": "perform",
+                "whyText": "Trọng âm của perform nhấn vào âm tiết thứ 2, trong khi các từ còn lại có trọng âm nhấn vào âm tiết thứ 1."
+            },
+            {
+                "id": 37,
+                "sectionTitle": null,
+                "wordsHeaderHtml": "brother &nbsp;|&nbsp; cartoon &nbsp;|&nbsp; invite &nbsp;|&nbsp; author",
+                "requirement": "Chọn từ có trọng âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "brother", "underlinedHtml": "brother", "isCorrect": false},
+                    {"word": "cartoon", "underlinedHtml": "cartoon", "isCorrect": true},
+                    {"word": "invite", "underlinedHtml": "invite", "isCorrect": false},
+                    {"word": "author", "underlinedHtml": "author", "isCorrect": false}
+                ],
+                "analysis": [
+                    {"word": "brother", "type": "n", "ipa": "/ˈbrʌð.ər/", "meaning": "trọng âm 1 (anh/em trai)"},
+                    {"word": "cartoon", "type": "n", "ipa": "/kɑːˈtuːn/", "meaning": "trọng âm 2 (phim hoạt hình)"},
+                    {"word": "invite", "type": "v", "ipa": "/ɪnˈvaɪt/", "meaning": "trọng âm 2 (mời)"},
+                    {"word": "author", "type": "n", "ipa": "/ˈɔː.θər/", "meaning": "trọng âm 1 (tác giả)"}
+                ],
+                "whyWord": "cartoon",
+                "whyText": "Trọng âm của cartoon nhấn vào âm tiết thứ 2 (hoặc invite cũng có trọng âm 2), khác với brother và author có trọng âm 1."
+            },
+            {
+                "id": 38,
+                "sectionTitle": null,
+                "wordsHeaderHtml": "teacher &nbsp;|&nbsp; habit &nbsp;|&nbsp; escape &nbsp;|&nbsp; worker",
+                "requirement": "Chọn từ có trọng âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "teacher", "underlinedHtml": "teacher", "isCorrect": false},
+                    {"word": "habit", "underlinedHtml": "habit", "isCorrect": false},
+                    {"word": "escape", "underlinedHtml": "escape", "isCorrect": true},
+                    {"word": "worker", "underlinedHtml": "worker", "isCorrect": false}
+                ],
+                "analysis": [
+                    {"word": "teacher", "type": "n", "ipa": "/ˈtiː.tʃər/", "meaning": "trọng âm 1 (giáo viên)"},
+                    {"word": "habit", "type": "n", "ipa": "/ˈhæb.ɪt/", "meaning": "trọng âm 1 (thói quen)"},
+                    {"word": "escape", "type": "v", "ipa": "/ɪˈskeɪp/", "meaning": "trọng âm 2 (trốn thoát)"},
+                    {"word": "worker", "type": "n", "ipa": "/ˈwɜː.kər/", "meaning": "trọng âm 1 (công nhân)"}
+                ],
+                "whyWord": "escape",
+                "whyText": "Trọng âm của escape nhấn vào âm tiết thứ 2, trong khi các từ còn lại có trọng âm nhấn vào âm tiết thứ 1."
+            },
+            {
+                "id": 39,
+                "sectionTitle": null,
+                "wordsHeaderHtml": "pottery &nbsp;|&nbsp; flower &nbsp;|&nbsp; silent &nbsp;|&nbsp; prepare",
+                "requirement": "Chọn từ có trọng âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "pottery", "underlinedHtml": "pottery", "isCorrect": false},
+                    {"word": "flower", "underlinedHtml": "flower", "isCorrect": false},
+                    {"word": "silent", "underlinedHtml": "silent", "isCorrect": false},
+                    {"word": "prepare", "underlinedHtml": "prepare", "isCorrect": true}
+                ],
+                "analysis": [
+                    {"word": "pottery", "type": "n", "ipa": "/ˈpɒt.ər.i/", "meaning": "trọng âm 1 (đồ gốm)"},
+                    {"word": "flower", "type": "n", "ipa": "/ˈflaʊ.ər/", "meaning": "trọng âm 1 (bông hoa)"},
+                    {"word": "silent", "type": "adj", "ipa": "/ˈsaɪ.lənt/", "meaning": "trọng âm 1 (im lặng)"},
+                    {"word": "prepare", "type": "v", "ipa": "/prɪˈpeər/", "meaning": "trọng âm 2 (chuẩn bị)"}
+                ],
+                "whyWord": "prepare",
+                "whyText": "Trọng âm của prepare nhấn vào âm tiết thứ 2, trong khi các từ còn lại có trọng âm nhấn vào âm tiết thứ 1."
+            },
+            {
+                "id": 40,
+                "sectionTitle": null,
+                "wordsHeaderHtml": "affect &nbsp;|&nbsp; excuse &nbsp;|&nbsp; attend &nbsp;|&nbsp; damage",
+                "requirement": "Chọn từ có trọng âm khác với các từ còn lại.",
+                "options": [
+                    {"word": "affect", "underlinedHtml": "affect", "isCorrect": false},
+                    {"word": "excuse", "underlinedHtml": "excuse", "isCorrect": false},
+                    {"word": "attend", "underlinedHtml": "attend", "isCorrect": false},
+                    {"word": "damage", "underlinedHtml": "damage", "isCorrect": true}
+                ],
+                "analysis": [
+                    {"word": "affect", "type": "v", "ipa": "/əˈfekt/", "meaning": "trọng âm 2 (ảnh hưởng)"},
+                    {"word": "excuse", "type": "v/n", "ipa": "/ɪkˈskjuːz/", "meaning": "trọng âm 2 (tha lỗi, lời bào chữa)"},
+                    {"word": "attend", "type": "v", "ipa": "/əˈtend/", "meaning": "trọng âm 2 (tham dự)"},
+                    {"word": "damage", "type": "n/v", "ipa": "/ˈdæm.ɪdʒ/", "meaning": "trọng âm 1 (thiệt hại)"}
+                ],
+                "whyWord": "damage",
+                "whyText": "Trọng âm của damage nhấn vào âm tiết thứ 1, trong khi các từ còn lại có trọng âm nhấn vào âm tiết thứ 2."
+            }
+        ];
+
+        // Track User Performance
+        const userAnswers = {};
+
+        // Render Quiz
+        function renderQuiz() {
+            const container = document.getElementById('questions-container');
+            container.innerHTML = '';
+
+            questionsData.forEach((q) => {
+                // Render section banner if present
+                if (q.sectionTitle) {
+                    const sectionBanner = document.createElement('div');
+                    sectionBanner.className = 'section-title-banner';
+                    sectionBanner.innerText = q.sectionTitle;
+                    container.appendChild(sectionBanner);
+                }
+
+                // Shuffle options for this question dynamically
+                const shuffledOpts = shuffleArray(q.options);
+
+                const card = document.createElement('div');
+                card.className = 'question-card';
+                card.id = `q-card-${q.id}`;
+
+                let optionsHtml = '';
+                shuffledOpts.forEach((opt, idx) => {
+                    optionsHtml += `
+                        <button class="opt-btn" 
+                                id="btn-${q.id}-${idx}"
+                                onclick="handleSelect(${q.id}, ${idx}, ${opt.isCorrect}, this)">
+                            ${opt.underlinedHtml}
+                        </button>
+                    `;
+                });
+
+                let analysisListHtml = '';
+                q.analysis.forEach((an) => {
+                    analysisListHtml += `
+                        <li>
+                            <span class="en-word">${an.word}</span> 
+                            <span>(${an.type})</span> 
+                            <span class="ipa-badge">[ ${an.ipa} ]</span>: 
+                            <span class="vn-meaning">${an.meaning}</span>.
+                        </li>
+                    `;
+                });
+
+                card.innerHTML = `
+                    <div class="question-header">
+                        <div class="question-number">🌟 CÂU ${q.id}:</div>
+                        <div class="question-words-line">${q.wordsHeaderHtml}</div>
+                    </div>
+                    <div class="options-grid" id="grid-${q.id}">
+                        ${optionsHtml}
+                    </div>
+                    <div class="explanation-box" id="exp-${q.id}">
+                        <div class="exp-banner">${q.requirement}</div>
+                        <div class="exp-content">
+                            <div class="exp-section-title">1. Phân tích 4 đáp án:</div>
+                            <ul class="exp-list">
+                                ${analysisListHtml}
+                            </ul>
+                            <div class="exp-why-box">
+                                <div class="exp-why-title">2. Tại sao chọn <span class="en-word">${q.whyWord}</span>?</div>
+                                <div class="exp-why-desc">${q.whyText}</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                container.appendChild(card);
+            });
+        }
+
+        // Handle Option Click
+        function handleSelect(qId, selectedIdx, isCorrect, clickedBtn) {
+            // Lock question buttons
+            const grid = document.getElementById(`grid-${qId}`);
+            const buttons = grid.getElementsByClassName('opt-btn');
+            for (let btn of buttons) {
+                btn.disabled = true;
+            }
+
+            // Save user answer status
+            userAnswers[qId] = isCorrect;
+
+            // Apply correct/incorrect style
+            if (isCorrect) {
+                clickedBtn.classList.add('correct');
+                playCorrectSound();
+            } else {
+                clickedBtn.classList.add('incorrect');
+                playWrongSound();
+
+                // Find and highlight the correct answer button
+                const qData = questionsData.find(q => q.id === qId);
+                const correctWord = qData.options.find(o => o.isCorrect).word;
+                
+                for (let btn of buttons) {
+                    if (btn.innerText.trim().toLowerCase() === correctWord.toLowerCase()) {
+                        btn.classList.add('correct');
+                    }
+                }
+            }
+
+            // Reveal Explanation Immediately
+            const expBox = document.getElementById(`exp-${qId}`);
+            if (expBox) {
+                expBox.style.display = 'block';
+            }
+        }
+
+        // Summary Modal Logic
+        function showSummaryModal() {
+            const totalQuestions = questionsData.length;
+            const answeredCount = Object.keys(userAnswers).length;
+            let correctCount = 0;
+
+            for (let qId in userAnswers) {
+                if (userAnswers[qId] === true) {
+                    correctCount++;
+                }
+            }
+
+            const modal = document.getElementById('summary-modal');
+            const scoreBadge = document.getElementById('modal-score');
+            const messageBox = document.getElementById('modal-message');
+            const emojiBox = document.getElementById('modal-emoji');
+
+            scoreBadge.innerText = `${correctCount} / ${totalQuestions} CÂU ĐÚNG`;
+
+            if (answeredCount === 0) {
+                emojiBox.innerText = "📖";
+                messageBox.innerText = "Em chưa làm câu nào cả! Hãy bấm chọn đáp án và đọc giải thích từng câu nhé!";
+            } else if (correctCount === totalQuestions) {
+                emojiBox.innerText = "🏆";
+                messageBox.innerHTML = "<strong>XUẤT SẮC 40/40!</strong> 🎉<br>Em đã nắm rất vững kiến thức phát âm và trọng âm. Hãy duy trì thói quen ghi chép từ vựng vào vở để ngày càng giỏi hơn nữa nhé!";
+            } else if (correctCount >= 28) {
+                emojiBox.innerText = "🌟";
+                messageBox.innerHTML = `<strong>RẤT TỐT! (${correctCount}/${totalQuestions})</strong> 👍<br>Em làm bài khá chuẩn đấy! Đừng quên đọc kỹ giải thích những câu làm sai và chép lại từ vựng mới vào vở nhé!`;
+            } else {
+                emojiBox.innerText = "💪";
+                messageBox.innerHTML = `<strong>CỐ GẮNG LÊN EM! (${correctCount}/${totalQuestions})</strong> 📖<br>Hãy kéo lên đọc lại kỹ giải thích của từng câu, tra phiên âm và chép toàn bộ từ mới vào vở. Chăm chỉ chắc chắn em sẽ tiến bộ vượt bậc!`;
+            }
+
+            modal.style.display = 'flex';
+        }
+
+        function closeSummaryModal() {
+            document.getElementById('summary-modal').style.display = 'none';
+        }
+
+        // Initialize on load
+        window.addEventListener('DOMContentLoaded', () => {
+            renderQuiz();
+        });
+    </script>
+</body>
+</html>
